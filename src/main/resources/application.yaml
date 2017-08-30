@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        requests_output:
+          destination: requests
+        requests_input:
+          destination: requests
+        replies_input:
+          destination: replies
+        replies_output:
+          destination: replies
