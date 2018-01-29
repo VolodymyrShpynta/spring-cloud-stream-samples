@@ -1,6 +1,17 @@
 spring:
   cloud:
     stream:
+      defaultBinder: rabbitMQ
+      binders:
+        rabbitMQ:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
       bindings:
         requests_output:
           destination: requests
