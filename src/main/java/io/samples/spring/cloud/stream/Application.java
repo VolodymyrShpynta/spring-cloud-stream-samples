@@ -6,20 +6,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
-@EnableBinding(StreamBindings.class)
+@EnableBinding({StreamBindings.class})
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@Autowired
-	Producer producer;
+    @Autowired
+    private Producer producer;
 
-	@Override
-	public void run(String... strings) throws Exception {
-		producer.send("data-1");
-		producer.send("data-2");
-		producer.send("data-3");
-	}
+    @Override
+    public void run(String... strings) {
+        producer.send("data-1");
+        producer.send("data-2");
+        producer.send("data-3");
+    }
 }
