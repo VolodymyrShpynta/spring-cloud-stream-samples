@@ -1,9 +1,9 @@
 spring:
   cloud:
     stream:
-      defaultBinder: rabbitMQ
+      defaultBinder: myRabbitBinder
       binders:
-        rabbitMQ:
+        myRabbitBinder:
           type: rabbit
           environment:
             spring:
