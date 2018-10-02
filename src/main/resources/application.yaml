@@ -1,18 +1,17 @@
 spring:
   cloud:
     stream:
-      defaultBinder: rabbitMQ
+      defaultBinder: myKafkaBinder
       binders:
-        rabbitMQ:
-          type: rabbit
+        myKafkaBinder:
+          type: kafka
           environment:
             spring:
-              rabbitmq:
-                host: localhost
-                port: 5672
-                username: guest
-                password: guest
-                virtual-host: /
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: localhost:9092
       bindings:
         requests_output:
           destination: requests
