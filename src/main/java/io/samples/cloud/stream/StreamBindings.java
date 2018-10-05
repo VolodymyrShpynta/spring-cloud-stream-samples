@@ -1,4 +1,4 @@
-package io.samples.spring.cloud.stream;
+package io.samples.cloud.stream;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
@@ -6,6 +6,7 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.SubscribableChannel;
 
 public interface StreamBindings {
+
     String REQUESTS_OUTPUT = "requests_output";
     String REQUESTS_INPUT = "requests_input";
 

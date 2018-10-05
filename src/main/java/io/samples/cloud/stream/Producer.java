@@ -1,14 +1,15 @@
-package io.samples.spring.cloud.stream;
+package io.samples.cloud.stream;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class Producer {
-    @Autowired
-    private StreamBindings streamBindings;
+
+    private final StreamBindings streamBindings;
 
     public void send(String data) {
         System.out.println("Producer sends: " + data);

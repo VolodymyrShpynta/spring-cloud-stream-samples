@@ -1,4 +1,4 @@
-package io.samples.spring.cloud.stream;
+package io.samples.cloud.stream;
 
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.SendTo;
